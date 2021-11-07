@@ -1,38 +1,76 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300&display=swap');
+
+
+body{
+    font-family: 'Roboto', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#editable{
+    width: 100%;
+    padding: 10px;
+    height: 320px;
+    margin: 10px;
+    flex: 1;
+    caret-color: red;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+    word-spacing: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container{
+    height: 100%;
+    display: flex;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.position{
+    padding: 10px;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.form-container{
+  padding: 10px;
+}
+
+.form-container input, select{
+  outline: none;
+  padding: 3px;
+}
+
+.form-container button{
+  outline: none;
+  border: none;
+  background-color: green;
   color: white;
+  cursor: pointer;
+  padding: 7px 15px;
 }
 
-.App-link {
-  color: #61dafb;
+.added{
+  width: fit-content;
+  margin: 0 5px 0 5px;
+}
+.added-container{
+  display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cursor-handlers{
+  display: flex;
+  margin-left: 30px;
+}
+
+.cursor-handlers button{
+  height: 30px;
+  margin: auto 15px auto 50px;
+  outline: none;
+  border: none;
+  padding: 4px 10px;
+  background-color: grey;
+  color: white;
+  cursor: pointer;
+}
+
+.generate-button{
+  margin: 20px;
 }
