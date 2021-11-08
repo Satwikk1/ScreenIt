@@ -67,8 +67,9 @@ const Creator = () => {
                         <option value="name">name</option>
                         <option value="email">email</option>
                         <option value="graduation year">graduation year</option>
-                        <option value="phone">phone</option>
                         <option value="address">address</option>
+                        <option value="phone">phone</option>
+                        <option value="total experience">total experience</option>
                         <option value="collage name">collage name</option>
                     </select>
                     <button onClick={()=>{
