@@ -37,24 +37,6 @@ const Creator = () => {
             </div>
 
             <div className="form-container">
-                <div style={{margin: "20px 5px"}}>
-                    {
-                    filledTags===null?
-                    null
-                    :
-                        filledTags.map((item, idx)=>{
-                            return(
-                                <div className="added-container">
-                                    <div>{idx+1}. | </div>
-                                    <div className="added"> <b>{text.slice(item[0], item[1])}</b> |</div>
-                                    <div className="added"> {item[0]} |</div>
-                                    <div className="added"> {item[1]} |</div>
-                                    <div className="added">{ item[2]} |</div>
-                                </div>
-                            )
-                        })
-                    }
-                </div>
                 <div>
                     <input onChange={(e)=>{setStart(e.target.value)}} value={start} style={{margin: "0 8px 0 8px"}} type="number" className="start-input-0" placeholder="start"/>
                     <input onChange={(e)=>{setEnd(e.target.value)}} value={end} style={{margin: "0 8px 0 8px"}}  type="number" className="end-input-0" placeholder="end"/>
@@ -105,6 +87,24 @@ const Creator = () => {
                             setGenerated(true)
                         }
                     }}>generate</button>
+                </div>
+                <div style={{margin: "20px 5px"}}>
+                    {
+                        filledTags===null?
+                            null
+                            :
+                            filledTags.map((item, idx)=>{
+                                return(
+                                    <div className="added-container">
+                                        <div>{idx+1}. | </div>
+                                        <div className="added"> <b>{text.slice(item[0], item[1])}</b> |</div>
+                                        <div className="added"> {item[0]} |</div>
+                                        <div className="added"> {item[1]} |</div>
+                                        <div className="added">{ item[2]} |</div>
+                                    </div>
+                                )
+                            })
+                    }
                 </div>
             </div>
         </div>
