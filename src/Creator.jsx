@@ -77,7 +77,6 @@ const Creator = () => {
                         <option value="wins">wins</option>
                         <option value="name">name</option>
                         <option value="email">email</option>
-                        
                     </select>
                     <button onClick={()=>{
                         var temp;
