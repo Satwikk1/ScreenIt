@@ -112,6 +112,24 @@ const Creator = () => {
                         }
                     }}>generate</button>
                 </div>
+                <div style={{margin: "20px 5px"}}>
+                    {
+                        filledTags===null?
+                            null
+                            :
+                            filledTags.map((item, idx)=>{
+                                return(
+                                    <div className="added-container">
+                                        <div>{idx+1}. | </div>
+                                        <div className="added"> <b>{text.slice(item[0], item[1])}</b> |</div>
+                                        <div className="added"> {item[0]} |</div>
+                                        <div className="added"> {item[1]} |</div>
+                                        <div className="added">{ item[2]} |</div>
+                                    </div>
+                                )
+                            })
+                    }
+                </div>
             </div>
         </div>
     )
