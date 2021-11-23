@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 
 const Creator = () => {
@@ -12,6 +12,13 @@ const Creator = () => {
     const [generated, setGenerated] = useState(false);
 
     const textarea = useRef(null);
+    const div = useRef(null);
+
+    useEffect(() => {
+        window.setInterval(()=>{
+            if(div!=null){div.current.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"})}
+        }, 500)
+    }, [filledTags])
 
     return (
         <div>
@@ -37,22 +44,39 @@ const Creator = () => {
             </div>
 
             <div className="form-container">
+                <div ref={div} className="filled-tags-container" style={{margin: "20px 5px"}}>
+                    {
+                    filledTags===null?
+                    null
+                    :
+                        filledTags.map((item, idx)=>{
+                            return(
+                                <div className="added-container">
+                                    <div>{idx+1}. | </div>
+                                    <div className="added"> <b>{text.slice(item[0], item[1])}</b> |</div>
+                                    <div className="added"> {item[0]} |</div>
+                                    <div className="added"> {item[1]} |</div>
+                                    <div className="added">{ item[2]} |</div>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
                 <div>
                     <input onChange={(e)=>{setStart(e.target.value)}} value={start} style={{margin: "0 8px 0 8px"}} type="number" className="start-input-0" placeholder="start"/>
                     <input onChange={(e)=>{setEnd(e.target.value)}} value={end} style={{margin: "0 8px 0 8px"}}  type="number" className="end-input-0" placeholder="end"/>
                     <select onChange={(e)=>{setTag(e.target.value)}} value={tag} style={{margin: "0 8px 0 8px"}}>
                         <option default value="#">tag</option>
                         <option value="companies worked at">companies worked at</option>
+                        <option value="designation">designation</option>
+                        <option value="total experience">total experience</option>
                         <option value="skill">skill</option>
                         <option value="experience duration">experience duration</option>
-                        <option value="designation">designation</option>
+                        <option value="collage name">collage name</option>
+                        <option value="certification">certification</option>
+                        <option value="wins">wins</option>
                         <option value="name">name</option>
                         <option value="email">email</option>
-                        <option value="graduation year">graduation year</option>
-                        <option value="address">address</option>
-                        <option value="phone">phone</option>
-                        <option value="total experience">total experience</option>
-                        <option value="collage name">collage name</option>
                     </select>
                     <button onClick={()=>{
                         var temp;
@@ -64,7 +88,7 @@ const Creator = () => {
                         var l = [start, end, tag]
                         temp.push(l);
                         setFilledTags(temp);
-                        setHelper(!helper)
+                        setHelper(!helper);
                     }} style={{margin: "0 8px 0 8px"}}>add</button>
                 </div>
                 <div className="generate-button">

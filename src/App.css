@@ -74,3 +74,8 @@ body{
 .generate-button{
   margin: 20px;
 }
+
+.filled-tags-container{
+  max-height: 200px;
+  overflow: scroll;
+}
