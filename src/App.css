@@ -76,6 +76,16 @@ body{
 }
 
 .filled-tags-container{
-  max-height: 200px;
+  max-height: 100px;
   overflow: scroll;
+}
+
+.input-checkbox{
+  margin: auto 0% auto auto;
+  float: right;
+}
+
+label{
+  margin: auto 10px;
+  margin-right: 5%;
 }

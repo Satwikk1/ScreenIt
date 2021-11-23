@@ -112,7 +112,7 @@ const Creator = () => {
                         }
                     }}>generate</button>
                 </div>
-                <div style={{margin: "20px 5px"}}>
+                {/* <div style={{margin: "20px 5px"}}>
                     {
                         filledTags===null?
                             null
@@ -129,7 +129,7 @@ const Creator = () => {
                                 )
                             })
                     }
-                </div>
+                </div> */}
             </div>
         </div>
     )
