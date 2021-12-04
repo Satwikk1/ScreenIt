@@ -1,0 +1,73 @@
+body{
+    padding: 1%;
+}
+
+.app-heading{
+    text-align: center;
+}
+
+.home-container{
+    .card{
+        z-index: 1;
+        width: 15rem;
+        border-radius: 5%;
+        margin-top: 0px;
+        transform: scale(1);
+        transition: 0.5s ease-in-out, transform 0.5s;
+    }
+
+    .card-columns{
+        display: flex;
+    }
+
+    .card-container{
+        // position: relative;
+        padding: 5px;
+    }
+    .card-container:hover > .card-nav{
+        bottom: 60px;
+        transition: bottom 0.5s ease-in-out;
+    }
+    .card-container:hover > .card{
+        margin-bottom: 20px;
+        margin-top: -15px;
+        transition: 0.5s ease-in-out, transform 0.5s;
+        transform: scale(1.1);
+    }
+
+    .card-nav{
+        position: relative;
+        bottom: 100px;
+        transition: bottom 0.5s ease-in-out;
+        padding-top: 60px;
+        display: flex;
+        padding-bottom: 10px;
+        background-color: greenyellow;
+        border-bottom-left-radius: 5%;
+        border-bottom-right-radius: 5%;
+        max-width: 100%;
+        button{
+            outline: none;
+            cursor: pointer;
+            border: none;
+            background-color: rgba(108, 112, 108, 0);
+            color: white;
+            margin: 7px auto;
+            display: flex;
+        }
+    }
+}
+
+.card-skills{
+    display: flex;
+    span{
+        padding: 0px 10px;
+        background-color: green;
+        border-radius: 5px;
+        color: white;
+        margin: 2px 4px;
+    }
+    p{
+        margin: auto;
+    }
+}
